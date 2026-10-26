@@ -1,0 +1,170 @@
+.textbox-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #06081a;
+  color: #f1f5f9;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.textbox-bg-glow {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.textbox-main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 5vw, 4rem) 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.textbox-form {
+  width: min(100%, 540px);
+  padding: clamp(2rem, 5vw, 3rem);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.4),
+    0 0 45px rgba(99, 102, 241, 0.12);
+}
+
+.textbox-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c4b5fd;
+  margin-bottom: 1.25rem;
+}
+
+.textbox-form h1 {
+  margin: 0 0 0.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.textbox-form .title-accent {
+  background: linear-gradient(135deg, #818cf8, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.textbox-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.textbox-form label {
+  display: block;
+  margin-bottom: 0.65rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.textbox-form input {
+  width: 100%;
+  min-height: 52px;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1.25rem;
+  border: 1.5px solid rgba(139, 92, 246, 0.3);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(11, 18, 34, 0.9);
+  color: #f8fafc;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.textbox-form input:focus {
+  border-color: #818cf8;
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.25),
+    0 8px 24px rgba(99, 102, 241, 0.2);
+}
+
+.textbox-form button {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.textbox-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(99, 102, 241, 0.45);
+}
+
+.textbox-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.textbox-feedback {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.textbox-feedback.success {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #86efac;
+}
+
+.textbox-feedback.error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .textbox-form input,
+  .textbox-form button {
+    transition: none;
+  }
+}
